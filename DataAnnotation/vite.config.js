@@ -3,10 +3,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 
-const isProdEnv = process.env.NODE_ENV === 'production';
-const PUBLIC_PATH = isProdEnv ? process.env.PUBLIC_PATH + "/" + process.env.CHAT_VARIABLE : process.env.PUBLIC_PATH;
-const chatVariable = process.env.CHAT_VARIABLE || 'DataAnnotation';
-const OUT_DIR = isProdEnv ? 'build/' + chatVariable : 'build';
+const PUBLIC_PATH = "/";
+const OUT_DIR = 'build';
 const PLUGINS  = isProdEnv ? [react()] : [
     react(),
     {
